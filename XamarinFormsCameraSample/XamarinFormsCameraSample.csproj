@@ -32,6 +32,8 @@
   <ItemGroup>
     <Compile Include="XamarinFormsCameraSample.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="CameraResult.cs" />
+    <Compile Include="ICameraProvider.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">
