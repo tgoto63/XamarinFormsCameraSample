@@ -42,6 +42,14 @@ namespace XamarinFormsCameraSample.iOS
         public static void TakePicture(UIViewController parent, Action<NSDictionary> callback)
         {
             Init();
+
+            // Camera is not available
+            if (!UIImagePickerController.IsSourceTypeAvailable(UIImagePickerControllerSourceType.Camera))
+            {
+                SelectPicture(parent, callback);
+                return;
+            }
+
             picker.SourceType = UIImagePickerControllerSourceType.Camera;
             _callback = callback;
             parent.PresentViewController((UIViewController)picker, true, (Action)null);
